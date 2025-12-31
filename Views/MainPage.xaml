@@ -36,15 +36,15 @@
             </Grid>
         </Border>
         <Border Grid.Row="1" Stroke="#3d3d3d" StrokeThickness="1" StrokeShape="RoundRectangle 5,5,5,5" Padding="8,5" HorizontalOptions="Fill" VerticalOptions="Fill" >
-            <Grid ColumnDefinitions="Auto,Auto" HorizontalOptions="Fill" VerticalOptions="Fill" Margin="0" Padding="1" >
+            <Grid ColumnDefinitions="*,Auto" HorizontalOptions="Fill" VerticalOptions="Fill" Margin="0" Padding="1" >
                 <toolkit:MediaElement IsVisible="{Binding VideoVis}" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Center" Source="{Binding MediaSource}" 
-                    MinimumHeightRequest="200" MinimumWidthRequest="300" ShouldAutoPlay="True" />
-                <Image IsVisible="{Binding ImageVis}" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFit" Source="{Binding ImgSource}" />
+                    MinimumHeightRequest="600" MinimumWidthRequest="800" ShouldAutoPlay="True" />
+                <Image IsVisible="{Binding ImageVis}" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" MinimumHeightRequest="600" MinimumWidthRequest="800" Aspect="AspectFit" Source="{Binding ImgSource}" />
                 <ScrollView IsVisible="{Binding TextVis}" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill">
-                    <Editor HorizontalOptions="Fill" VerticalOptions="Fill" Text="{Binding TextContent}"/>
+                    <Editor HorizontalOptions="Fill" VerticalOptions="Fill" MinimumHeightRequest="600" MinimumWidthRequest="800" Text="{Binding TextContent}"/>
                 </ScrollView>
                 <ScrollView Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Always">
-                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="1,1" Spacing="5" WidthRequest="600">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="1,1" Spacing="5" WidthRequest="500">
                         <Editor HorizontalOptions="Fill" VerticalOptions="Fill" MinimumHeightRequest="50" Text="{Binding ResponseCode}" TextColor="LightGreen" IsReadOnly="True" />
                         <Editor HorizontalOptions="Fill" VerticalOptions="Fill" MinimumHeightRequest="100" Text="{Binding ContentHeaders}" TextColor="LightBlue" IsReadOnly="True" />
                         <Editor HorizontalOptions="Fill" VerticalOptions="Fill" AutoSize="TextChanges" Text="{Binding ResponseHeaders}" TextColor="LightGoldenrodYellow" IsReadOnly="True" />
