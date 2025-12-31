@@ -6,50 +6,50 @@
 
     <Grid RowDefinitions="Auto,*" HorizontalOptions="Fill" VerticalOptions="Fill" Margin="0" Padding="0">
         <Border Grid.Row="0" Stroke="#3d3d3d" StrokeThickness="1" StrokeShape="RoundRectangle 5,5,5,5" Padding="8,5" HorizontalOptions="Fill" VerticalOptions="Fill" MinimumWidthRequest="100" >
-            <VerticalStackLayout Padding="1,1" Spacing="5" >
-                <HorizontalStackLayout Padding="1,1" Spacing="5" >
-                    <Label Text="URL: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Enter your URL here:" Text="{Binding Url}" MinimumWidthRequest="1305" />
-                    <Button Text="Send URL request" FontAttributes="Bold" FontSize="Small"  Margin="5, 5" HorizontalOptions="End" Command="{Binding RequestUrlCmd}" IsEnabled="{Binding RequestButtonEnabled}"/>
-                    <Button Text="Cancel URL request" FontAttributes="Bold" FontSize="Small"  Margin="5, 5" HorizontalOptions="End" Command="{Binding CancelUrlCmd}" IsEnabled="{Binding CancelButtonEnabled}"/>
-                    <Label Text="{Binding RequestTimer}" Margin="20, 0" HorizontalOptions="End" VerticalOptions="Center" FontSize="Medium"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout Padding="1,1" Spacing="5">
-                    <Label Text="Hearder Key 1: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Key Here:" Text="{Binding HeaderKey1}" MinimumWidthRequest="350"/>
-                    <Label Text="Hearder Value 1: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Value Here:" Text="{Binding HeaderVal1}" MinimumWidthRequest="750"/>
-                    <Button Text="Save File" FontAttributes="Bold" FontSize="Small" Margin="5, 5" HorizontalOptions="End" Command="{Binding SaveCmd}" IsEnabled="{Binding SaveButtonEnabled}"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout Padding="1,1" Spacing="5">
-                    <Label Text="Hearder Key 2: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Key Here:" Text="{Binding HeaderKey2}" MinimumWidthRequest="350"/>
-                    <Label Text="Hearder Value 2: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Value Here:" Text="{Binding HeaderVal2}" MinimumWidthRequest="750"/>
-                </HorizontalStackLayout>
-                <HorizontalStackLayout Padding="1,1" Spacing="5">
-                    <Label Text="Hearder Key 3: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Key Here:" Text="{Binding HeaderKey3}" MinimumWidthRequest="350"/>
-                    <Label Text="Hearder Value 3: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Value Here:" Text="{Binding HeaderVal3}" MinimumWidthRequest="750"/>
-                </HorizontalStackLayout>
-            </VerticalStackLayout>
+            <Grid RowDefinitions="*,*,*,*" Padding="1,1" >
+                <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto">
+                    <Label Grid.Column="0" Text="URL: " Margin="5" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Editor Grid.Column="1" Margin="5" HorizontalOptions="Start" VerticalOptions="Center" Placeholder="Enter your URL here:" Text="{Binding Url}" MinimumWidthRequest="800" />
+                    <Button Grid.Column="2" Text="Send URL request" FontAttributes="Bold" FontSize="Small"  Margin="5, 5" HorizontalOptions="Start" Command="{Binding RequestUrlCmd}" IsEnabled="{Binding RequestButtonEnabled}"/>
+                    <Button Grid.Column="3" Text="Cancel URL request" FontAttributes="Bold" FontSize="Small"  Margin="5, 5" HorizontalOptions="Start" Command="{Binding CancelUrlCmd}" IsEnabled="{Binding CancelButtonEnabled}"/>
+                    <Label Grid.Column="4" Text="{Binding RequestTimer}" Margin="20, 0" HorizontalOptions="Start" VerticalOptions="Center" FontSize="Medium"/>
+                </Grid>
+                <Grid Grid.Row="1" ColumnDefinitions="Auto,Auto,Auto,Auto,Auto" Padding="1,1">
+                    <Label Grid.Column="0" Text="Hearder Key 1: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Editor Grid.Column="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Key Here:" Text="{Binding HeaderKey1}" MinimumWidthRequest="200"/>
+                    <Label Grid.Column="2" Text="Hearder Value 1: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Editor Grid.Column="3" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Value Here:" Text="{Binding HeaderVal1}" MinimumWidthRequest="405"/>
+                    <Button Grid.Column="4" Text="Save File" FontAttributes="Bold" FontSize="Small" Margin="5, 5" HorizontalOptions="End" Command="{Binding SaveCmd}" IsEnabled="{Binding SaveButtonEnabled}"/>
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto,Auto,Auto" Padding="1,1">
+                    <Label Grid.Column="0" Text="Hearder Key 2: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Editor Grid.Column="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Key Here:" Text="{Binding HeaderKey2}" MinimumWidthRequest="200"/>
+                    <Label Grid.Column="2" Text="Hearder Value 2: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Editor Grid.Column="3" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Value Here:" Text="{Binding HeaderVal2}" MinimumWidthRequest="405"/>
+                </Grid>
+                <Grid Grid.Row="3" ColumnDefinitions="Auto,Auto,Auto,Auto" Padding="1,1">
+                    <Label Grid.Column="0" Text="Hearder Key 3: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Editor Grid.Column="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Key Here:" Text="{Binding HeaderKey3}" MinimumWidthRequest="200"/>
+                    <Label Grid.Column="2" Text="Hearder Value 3: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Editor Grid.Column="3" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Value Here:" Text="{Binding HeaderVal3}" MinimumWidthRequest="405"/>
+                </Grid>
+            </Grid>
         </Border>
         <Border Grid.Row="1" Stroke="#3d3d3d" StrokeThickness="1" StrokeShape="RoundRectangle 5,5,5,5" Padding="8,5" HorizontalOptions="Fill" VerticalOptions="Fill" >
-            <Grid ColumnDefinitions="*,Auto" HorizontalOptions="Fill" VerticalOptions="Fill" Margin="0" Padding="1" >
+            <Grid ColumnDefinitions="Auto,Auto" HorizontalOptions="Fill" VerticalOptions="Fill" Margin="0" Padding="1" >
                 <toolkit:MediaElement IsVisible="{Binding VideoVis}" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="Center" Source="{Binding MediaSource}" 
                     MinimumHeightRequest="200" MinimumWidthRequest="300" ShouldAutoPlay="True" />
                 <Image IsVisible="{Binding ImageVis}" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill" Aspect="AspectFit" Source="{Binding ImgSource}" />
                 <ScrollView IsVisible="{Binding TextVis}" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill">
                     <Editor HorizontalOptions="Fill" VerticalOptions="Fill" Text="{Binding TextContent}"/>
                 </ScrollView>
-                <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center" VerticalOptions="Fill" Padding="1,1" Spacing="5" WidthRequest="800">
-                    <Editor HorizontalOptions="Fill" VerticalOptions="StartAndExpand" MinimumHeightRequest="50" Text="{Binding ResponseCode}" TextColor="LightGreen" IsReadOnly="True" />
-                    <Editor HorizontalOptions="Fill" VerticalOptions="StartAndExpand" MinimumHeightRequest="100" Text="{Binding ContentHeaders}" TextColor="LightBlue" IsReadOnly="True" />
-                    <ScrollView HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Always">
+                <ScrollView Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Fill" HorizontalScrollBarVisibility="Always" VerticalScrollBarVisibility="Always">
+                    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Fill" Padding="1,1" Spacing="5" WidthRequest="600">
+                        <Editor HorizontalOptions="Fill" VerticalOptions="Fill" MinimumHeightRequest="50" Text="{Binding ResponseCode}" TextColor="LightGreen" IsReadOnly="True" />
+                        <Editor HorizontalOptions="Fill" VerticalOptions="Fill" MinimumHeightRequest="100" Text="{Binding ContentHeaders}" TextColor="LightBlue" IsReadOnly="True" />
                         <Editor HorizontalOptions="Fill" VerticalOptions="Fill" AutoSize="TextChanges" Text="{Binding ResponseHeaders}" TextColor="LightGoldenrodYellow" IsReadOnly="True" />
-                    </ScrollView>
-                </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </ScrollView>
             </Grid>
 
         </Border>
