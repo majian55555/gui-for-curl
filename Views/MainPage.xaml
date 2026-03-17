@@ -18,20 +18,20 @@
                     <Label Grid.Column="0" Text="Hearder Key 1: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
                     <Editor Grid.Column="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Key Here:" Text="{Binding HeaderKey1}" MinimumWidthRequest="200"/>
                     <Label Grid.Column="2" Text="Hearder Value 1: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Grid.Column="3" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Value Here:" Text="{Binding HeaderVal1}" MinimumWidthRequest="405"/>
+                    <Editor Grid.Column="3" Margin="5" HorizontalOptions="Fill" VerticalOptions="Fill" Placeholder="Header Value Here:" Text="{Binding HeaderVal1}" WidthRequest="500" MaximumHeightRequest="70" IsTextPredictionEnabled="True"/>
                     <Button Grid.Column="4" Text="Save File" FontAttributes="Bold" FontSize="Small" Margin="5, 5" HorizontalOptions="End" Command="{Binding SaveCmd}" IsEnabled="{Binding SaveButtonEnabled}"/>
                 </Grid>
                 <Grid Grid.Row="2" ColumnDefinitions="Auto,Auto,Auto,Auto" Padding="1,1">
                     <Label Grid.Column="0" Text="Hearder Key 2: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
                     <Editor Grid.Column="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Key Here:" Text="{Binding HeaderKey2}" MinimumWidthRequest="200"/>
                     <Label Grid.Column="2" Text="Hearder Value 2: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Grid.Column="3" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Value Here:" Text="{Binding HeaderVal2}" MinimumWidthRequest="405"/>
+                    <Editor Grid.Column="3" Margin="5" HorizontalOptions="Fill" VerticalOptions="Fill" Placeholder="Header Value Here:" Text="{Binding HeaderVal2}" WidthRequest="500" MaximumHeightRequest="70" IsTextPredictionEnabled="True"/>
                 </Grid>
                 <Grid Grid.Row="3" ColumnDefinitions="Auto,Auto,Auto,Auto" Padding="1,1">
                     <Label Grid.Column="0" Text="Hearder Key 3: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
                     <Editor Grid.Column="1" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Key Here:" Text="{Binding HeaderKey3}" MinimumWidthRequest="200"/>
                     <Label Grid.Column="2" Text="Hearder Value 3: " Margin="5" HorizontalOptions="Center" VerticalOptions="Center"/>
-                    <Editor Grid.Column="3" Margin="5" HorizontalOptions="Center" VerticalOptions="Center" Placeholder="Header Value Here:" Text="{Binding HeaderVal3}" MinimumWidthRequest="405"/>
+                    <Editor Grid.Column="3" Margin="5" HorizontalOptions="Fill" VerticalOptions="Fill" Placeholder="Header Value Here:" Text="{Binding HeaderVal3}" WidthRequest="500"  MaximumHeightRequest="70" IsTextPredictionEnabled="True"/>
                 </Grid>
             </Grid>
         </Border>
