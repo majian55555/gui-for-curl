@@ -209,7 +209,6 @@ public class MainPageVm : ViewModelBase, IDisposable
         try
         {
             var response = await httpClient.GetAsync(Url, _request_cts.Token).CAF();
-            response.EnsureSuccessStatusCode(); // Throws exception if not success (2xx)
             
             ResponseCode = $"Response Code: {response.StatusCode}";
             RaisePropertyChanged(nameof(ResponseCode));
@@ -274,10 +273,6 @@ public class MainPageVm : ViewModelBase, IDisposable
         catch (TaskCanceledException e)
         {
             DialogService.ShowAlert("Error", $"Task cancelled: {e.Message}");
-        }
-        catch (HttpRequestException e)
-        {
-            DialogService.ShowAlert("Error", $"Request error: {e.Message}");
         }
         catch (Exception e)
         {
