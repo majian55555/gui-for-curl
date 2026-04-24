@@ -32,10 +32,17 @@ public partial class App : Application
         window.Title = "Curl MAUI - HTTP Client";
         window.Created += async (e, s) =>
         {
-            Log.Info("Window on Created.");
-            NavigationPage? nav = MainPage as NavigationPage;
-            MainPage p = nav?.RootPage as MainPage ?? throw LogNException("Create MainPage failed.");
-            await p.OnCreated().ConfigureAwait(true);
+            try
+            {
+                Log.Info("Window on Created.");
+                NavigationPage? nav = MainPage as NavigationPage;
+                MainPage p = nav?.RootPage as MainPage ?? throw LogNException("Create MainPage failed.");
+                await p.OnCreated().ConfigureAwait(true);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Unhandled exception in window Created handler.");
+            }
         };
         window.Stopped += (e, s) =>
         {
@@ -43,10 +50,17 @@ public partial class App : Application
         };
         window.Destroying += async (e, s) =>
         {
-            Log.Info("Window on Destroying.");
-            NavigationPage? nav = MainPage as NavigationPage;
-            MainPage p = nav?.RootPage as MainPage ?? throw LogNException("Destroying CameraHmiPage failed.");
-            await p.OnDestroy().ConfigureAwait(true);
+            try
+            {
+                Log.Info("Window on Destroying.");
+                NavigationPage? nav = MainPage as NavigationPage;
+                MainPage p = nav?.RootPage as MainPage ?? throw LogNException("Destroying MainPage failed.");
+                await p.OnDestroy().ConfigureAwait(true);
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex, "Unhandled exception in window Destroying handler.");
+            }
         };
         return window;
     }

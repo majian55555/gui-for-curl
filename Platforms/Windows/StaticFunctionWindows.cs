@@ -25,7 +25,12 @@ public class StaticFunctionsWindows
         {
             const int width = 1200;
             const int height = 800;
-            winuiAppWindow.MoveAndResize(new RectInt32(1920 / 2 - width / 2, 1080 / 2 - height / 2, width, height));
+            var displayArea = DisplayArea.GetFromWindowId(win32WindowsId, DisplayAreaFallback.Primary);
+            var workArea = displayArea.WorkArea;
+            winuiAppWindow.MoveAndResize(new RectInt32(
+                workArea.X + (workArea.Width / 2 - width / 2),
+                workArea.Y + (workArea.Height / 2 - height / 2),
+                width, height));
         }
     }
 }

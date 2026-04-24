@@ -10,9 +10,9 @@ namespace Curl_maui;
 
 public class StaticValues
 {
-    public static string CurrentSaveVideoFilePath()
+    public static string CurrentSaveVideoFilePath(string extension = "mp4")
     {
-        return Path.Combine(FileSystem.Current.AppDataDirectory, $"Video_{DateTime.UtcNow.ToLocalTime().ToDateTimeFileString()}.mp4");
+        return Path.Combine(FileSystem.Current.AppDataDirectory, $"Video_{DateTime.UtcNow.ToLocalTime().ToDateTimeFileString()}.{extension}");
     }
     public static string CurrentSaveImageFilePath(string extension = "jpg")
     {

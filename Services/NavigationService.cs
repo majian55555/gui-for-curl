@@ -239,8 +239,8 @@ public abstract class AbsNavigationService : INavigationService
         { await fromViewModel.OnNavigatedTo().CAF(); }
     }
 
-    private ViewModelBase GetPageViewModelBase(Page p)
-    { return p?.BindingContext as ViewModelBase ?? throw new NullReferenceException(); }
+    private ViewModelBase? GetPageViewModelBase(Page p)
+    { return p?.BindingContext as ViewModelBase; }
 
     private T ResolvePage<T>() where T : Page
     { return _services.GetService<T>() ?? throw new NullReferenceException(); }
