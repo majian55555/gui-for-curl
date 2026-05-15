@@ -65,3 +65,6 @@ nunit-*.xml
 
 #VS code
 .vscode/
+
+#Claude settings
+.claude/
