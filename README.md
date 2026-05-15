@@ -83,7 +83,6 @@ dotnet publish -f net10.0-windows10.0.19041.0 -c Release -p:RuntimeIdentifierOve
 dotnet publish -f net10.0-maccatalyst -c Release -p:CreatePackage=false
 ```
 
-> **Note**: The macOS CI build is currently disabled in GitHub Actions because the hosted `macos-latest` runner does not yet ship Xcode 26.2. The Windows CI build runs on every push and pull request.
 
 ## Usage
 
