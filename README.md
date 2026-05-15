@@ -1,5 +1,7 @@
 # GUI for Curl
 
+[![MAUI Desktop (.NET 10)](https://github.com/majian55555/Curl_Maui/actions/workflows/dotnet-desktop.yml/badge.svg)](https://github.com/majian55555/Curl_Maui/actions/workflows/dotnet-desktop.yml)
+
 A cross-platform HTTP client desktop application built with .NET MAUI that provides a graphical interface for making HTTP GET requests, similar to the command-line tool `curl`. The application allows you to send requests with custom headers and view responses in various formats (images, videos, or text).
 
 ## Demo
@@ -9,6 +11,7 @@ A cross-platform HTTP client desktop application built with .NET MAUI that provi
 ## Features
 
 - **HTTP GET Requests**: Send HTTP GET requests to any URL
+- **Non-2xx Response Handling**: Non-success HTTP status codes (4xx, 5xx, etc.) are displayed rather than treated as errors — you see the response body and headers for any status
 - **Custom Headers**: Add up to 3 custom header key-value pairs to your requests
 - **Response Display**: Automatically detects and displays:
   - **Images**: View image responses directly in the application
@@ -31,7 +34,7 @@ A cross-platform HTTP client desktop application built with .NET MAUI that provi
 - Visual Studio Code with C# extension and .NET MAUI extension
 - Platform-specific requirements:
   - **Windows**: Windows 10 version 17763.0 or later
-  - **Mac Catalyst**: macOS 12.0 or later
+  - **Mac Catalyst**: macOS 15.0 or later
 
 ## Installation
 
@@ -74,11 +77,13 @@ dotnet build -f net10.0-windows10.0.19041.0 -c Release -p:RuntimeIdentifierOverr
 dotnet publish -f net10.0-windows10.0.19041.0 -c Release -p:RuntimeIdentifierOverride=win10-x64
 ```
 
-### Publish for Mac Catalyst (macOS needs Xcode 26.2 or above installed)
+### Publish for Mac Catalyst (requires Xcode 26.2 or later)
 
 ```bash
 dotnet publish -f net10.0-maccatalyst -c Release -p:CreatePackage=false
 ```
+
+> **Note**: The macOS CI build is currently disabled in GitHub Actions because the hosted `macos-latest` runner does not yet ship Xcode 26.2. The Windows CI build runs on every push and pull request.
 
 ## Usage
 
