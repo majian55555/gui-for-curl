@@ -34,33 +34,29 @@ jobs:
           -f net10.0-windows10.0.19041.0
           -p:RuntimeIdentifierOverride=win10-x64
 
-# .NET 10 MAUI Mac Catalyst SDK 26.2.10191 expects Xcode 26.2. Wait until GitHub updates macos-latest / macos-14
-# Microsoft and GitHub will eventually ship Xcode 26.x
-# For now, preview SDK builds will fail on hosted runners
+  macos:
+    name: macOS (Mac Catalyst)
+    runs-on: macos-26
 
-  # macos:
-  #   name: macOS (Mac Catalyst)
-  #   runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-  #   steps:
-  #     - name: Checkout
-  #       uses: actions/checkout@v4
+      - name: Setup .NET 10
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+          dotnet-quality: 'preview'
 
-  #     - name: Setup .NET 10
-  #       uses: actions/setup-dotnet@v4
-  #       with:
-  #         dotnet-version: '10.0.x'
-  #         dotnet-quality: 'preview'
+      - name: Install MAUI workload
+        run: dotnet workload install maui
 
-  #     - name: Install MAUI workload
-  #       run: dotnet workload install maui
+      - name: Restore
+        run: dotnet restore
 
-  #     - name: Restore
-  #       run: dotnet restore
-
-  #     - name: Build (Mac Catalyst)
-  #       run: >
-  #         dotnet publish
-  #         -c Release
-  #         -f net10.0-maccatalyst
-  #         -p:CreatePackage=false
+      - name: Build (Mac Catalyst)
+        run: >
+          dotnet publish
+          -c Release
+          -f net10.0-maccatalyst
+          -p:CreatePackage=false
